@@ -29,6 +29,7 @@ const state: DatabaseModuleState = {
       accessKeyId: '',
       secretAccessKey: '',
       region: '',
+      profile: 'local-dev',
       endpoint: '',
       maxRetries: 1,
       dynamoDbCrc32: false,

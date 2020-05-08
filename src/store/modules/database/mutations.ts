@@ -7,6 +7,7 @@ function setToDefault(state: DatabaseModuleState) {
     secretAccessKey: '',
     region: '',
     endpoint: 'http://localhost:',
+    profile: 'local-dev',
     maxRetries: 1,
     dynamoDbCrc32: false,
   };
@@ -37,14 +38,10 @@ function correctInputs(state: DatabaseModuleState, serviceType: string) {
         state.submitForm.name || `Database ${state.list.length + 1}`;
       break;
     case 'local':
-      state.submitForm.configs.region = 'localhost';
-      state.submitForm.configs.accessKeyId = Math.random()
-        .toString(36)
-        .substring(7);
-      state.submitForm.configs.secretAccessKey = Math.random()
-        .toString(36)
-        .substring(7);
-      state.submitForm.name =
+      state.submitForm.configs.region = 'eu-west-1';
+      state.submitForm.configs.accessKeyId = 'dummy'
+      state.submitForm.configs.secretAccessKey = 'dummy'
+      state.submitForm.name = 'timing' ||
         state.submitForm.name || `Database ${state.list.length + 1}`;
       break;
   }
